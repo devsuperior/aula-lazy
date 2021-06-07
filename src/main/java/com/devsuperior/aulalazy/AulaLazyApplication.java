@@ -1,13 +1,12 @@
-package com.devsuperior.bds03;
+package com.devsuperior.aulalazy;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class Bds03Application {
+public class AulaLazyApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(Bds03Application.class, args);
+		SpringApplication.run(AulaLazyApplication.class, args);
 	}
-
 }

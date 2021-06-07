@@ -1,32 +1,32 @@
-package com.devsuperior.bds03.dto;
+package com.devsuperior.aulalazy.dto;
 
 import java.io.Serializable;
 
-import com.devsuperior.bds03.entities.Employee;
+import com.devsuperior.aulalazy.entities.Employee;
 
-public class EmployeeDTO implements Serializable {
+public class EmployeeDepartmentDTO implements Serializable {
 	private static final long serialVersionUID = 1L;
 	
 	private Long id;
 	private String name;
 	private String email;
-	private Long departmentId;
+	private DepartmentDTO department;
 	
-	public EmployeeDTO() {
+	public EmployeeDepartmentDTO() {
 	}
 
-	public EmployeeDTO(Long id, String name, String email, Long departmentId) {
+	public EmployeeDepartmentDTO(Long id, String name, String email, DepartmentDTO department) {
 		this.id = id;
 		this.name = name;
 		this.email = email;
-		this.departmentId = departmentId;
+		this.department = department;
 	}
 
-	public EmployeeDTO(Employee entity) {
+	public EmployeeDepartmentDTO(Employee entity) {
 		id = entity.getId();
 		name = entity.getName();
 		email = entity.getEmail();
-		departmentId = entity.getDepartment().getId();
+		department = new DepartmentDTO(entity.getDepartment());
 	}
 
 	public Long getId() {
@@ -53,11 +53,11 @@ public class EmployeeDTO implements Serializable {
 		this.email = email;
 	}
 
-	public Long getDepartmentId() {
-		return departmentId;
+	public DepartmentDTO getDepartment() {
+		return department;
 	}
 
-	public void setDepartmentId(Long departmentId) {
-		this.departmentId = departmentId;
+	public void setDepartment(DepartmentDTO department) {
+		this.department = department;
 	}
 }

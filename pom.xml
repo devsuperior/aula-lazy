@@ -10,9 +10,9 @@
 		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.devsuperior</groupId>
-	<artifactId>bds03</artifactId>
+	<artifactId>aulalazy</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>bds03</name>
+	<name>aulalazy</name>
 	<description>Bootcamp Spring React DevSuperior</description>
 
 	<properties>
