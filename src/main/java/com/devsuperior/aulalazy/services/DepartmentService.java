@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
 
+import com.devsuperior.aulalazy.entities.Employee;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -28,7 +29,7 @@ public class DepartmentService {
 	@Transactional(readOnly = true)
 	public List<EmployeeMinDTO> findEmployeesByDepartment(Long id) {
 		Optional<Department> result = repository.findById(id);
-		return result.get().getEmployees()
-				.stream().map(x -> new EmployeeMinDTO(x)).collect(Collectors.toList());
+		List<Employee> list = result.get().getEmployees();
+		return list.stream().map(x -> new EmployeeMinDTO(x)).toList();
 	}
 }
